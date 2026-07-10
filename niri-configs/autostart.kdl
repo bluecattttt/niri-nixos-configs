@@ -1,0 +1,26 @@
+// spawn.kdl
+
+spawn-sh-at-startup "awww-daemon && sleep 0.5 && [ -f ~/.cache/awww/last_wallpaper ] && xargs awww img < ~/.cache/awww/last_wallpaper"
+spawn-sh-at-startup "sleep 3 && quickshell"
+
+spawn-at-startup "kitty" "-e" "rmpc"
+spawn-at-startup "steam"
+spawn-at-startup "mpd-mpris"
+spawn-at-startup "/home/adi/AppImages/helium.appimage"
+spawn-at-startup "dunst"
+
+spawn-at-startup "ibus-daemon" "-drx"
+spawn-at-startup "hyprlock"
+
+
+environment {
+    QT_QPA_PLATFORM "wayland"
+    GDK_BACKEND "wayland,x11"
+    LIBVA_DRIVER_NAME "nvidia"
+    __GLX_VENDOR_LIBRARY_NAME "nvidia"
+    __GL_VRR_ALLOWED "1"
+    QSG_RHI_BACKEND "vulkan"
+    __EGL_VENDOR_LIBRARY_DIRS "/run/opengl-driver/share/glvnd/egl_vendor.d"
+GTK3_RC_FILES "/home/adi/.config/hyprland/gtk-3.0/settings.ini"
+GTK2_RC_FILES "/home/adi/.config/hyprland/gtk-2.0/gtkrc"
+}

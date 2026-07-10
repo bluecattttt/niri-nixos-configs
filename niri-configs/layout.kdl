@@ -1,0 +1,36 @@
+// layout.kdl
+
+layout {
+    gaps 8
+
+    struts {
+        left 0
+        right 0
+        top 0
+        bottom 0
+    }
+
+    focus-ring {
+        off
+    }
+
+    border {
+        width 1
+        active-color "#000000"
+        inactive-color "#ffffffff"
+    }
+
+    shadow {
+        on
+        softness 2
+        spread 0
+        color "#1a1a1aee"
+    }
+
+    background-color "transparent"
+}
+
+layer-rule {
+    match namespace="^awww-daemon$"
+    place-within-backdrop true
+}

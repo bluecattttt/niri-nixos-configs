@@ -1,0 +1,20 @@
+overview {
+    zoom 0.6
+    backdrop-color "#00000090"
+
+}
+
+
+
+
+prefer-no-csd
+
+include "input.kdl"
+include "layout.kdl"
+include "animations.kdl"
+include "keybinds.kdl"
+include "workspaces.kdl"
+include "windows-rules.kdl"
+include "autostart.kdl"
+
+include optional=true "local.kdl"

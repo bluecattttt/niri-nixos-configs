@@ -1,0 +1,21 @@
+window-rule {
+    match app-id=r#"^kitty$"# at-startup=true
+    open-on-workspace "1"
+    open-focused false
+}
+
+window-rule {
+    match app-id=r#"^steam$"# at-startup=true
+    open-on-workspace "4"
+    open-focused false
+}
+window-rule {
+    match app-id=r#"^helium$"# at-startup=true
+    open-on-workspace "2"
+    open-focused false
+}
+
+window-rule {
+    geometry-corner-radius 5
+    clip-to-geometry true
+}
