@@ -1,5 +1,11 @@
 // workspaces.kdl — workspace focus/move keybinds
 
+
+workspace "1"
+workspace "2"
+workspace "3"
+
+
 binds {
     // === Workspaces 1-10 (0 = 10th) ===
     Mod+1 { focus-workspace 1; }

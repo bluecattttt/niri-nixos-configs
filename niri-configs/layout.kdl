@@ -16,7 +16,7 @@ layout {
 
     border {
         width 1
-        active-color "#000000"
+        active-color "#068a0d"
         inactive-color "#ffffffff"
     }
 
@@ -28,9 +28,22 @@ layout {
     }
 
     background-color "transparent"
+
+
+    default-column-width { proportion 0.5; }
+
+       insert-hint {
+           color "#ffc87f40"
+       }
 }
 
 layer-rule {
     match namespace="^awww-daemon$"
     place-within-backdrop true
 }
+
+// Global blur for every window. background-effect only shows through
+// transparent/semi-transparent regions, so it's paired with opacity < 1.0
+// here to actually be visible. Drop the opacity line if you'd rather blur
+// stay invisible except on windows that set their own transparency
+// (like your librewolf/ghostty rules).

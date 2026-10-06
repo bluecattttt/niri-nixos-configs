@@ -2,12 +2,21 @@
 
 binds {
     // === Basic ===
-    Mod+Q { spawn "kitty"; }
+    Mod+Q repeat=false { spawn "kitty"; }
     Mod+C { close-window; }
     Mod+M { quit; }
     Mod+E { spawn "thunar"; }
-    Mod+V { toggle-window-floating; }
-    Mod+R { spawn "rofi" "-show" "drun"; }
+    //Mod+R { spawn "rofi" "-show" "drun"; }
+    Mod+F { fullscreen-window; }
+    Mod+R { spawn "fuzzel"; }
+
+
+
+
+
+
+
+
 
     // === Volume / brightness ===
     XF86AudioRaiseVolume  allow-when-locked=true { spawn "wpctl" "set-volume" "-l" "1" "@DEFAULT_AUDIO_SINK@" "5%+"; }
@@ -27,16 +36,39 @@ binds {
     Mod+P { spawn "/home/adi/.config/hypr/scripts/wallpaper-switcher.sh"; }
 
     // === Launch apps ===
-  
-  
+
+
     Alt+Space { spawn-sh "pkill -x wofi; wofi --show drun"; }
     Alt+B { spawn "helium-browser"; }
-  
+
    // === Focus ===
     Mod+A  { focus-column-left; }
     Mod+D { focus-column-right; }
     Mod+W    { focus-window-up; }
     Mod+S  { focus-window-down; }
+    Mod+V { toggle-window-floating; }
+
+
+    Mod+J { move-column-left; }
+    Mod+K  { move-window-down; }
+    Mod+I   { move-window-up; }
+    Mod+L { move-column-right; }
+
+    // === Resize (arrows) ===
+    Mod+Left  { set-column-width "-50%"; }
+    Mod+Right { set-column-width "+50%"; }
+    Mod+Up    { set-window-height "-50%"; }
+    Mod+Down  { set-window-height "+50%"; }
+
+
+
+    // MOUSE
+    Mod+WheelScrollDown cooldown-ms=150 { focus-workspace-down; }
+    Mod+WheelScrollUp   cooldown-ms=150 { focus-workspace-up; }
+
+
+
+
 
     // === Notifications (swaync) ===
     Super+N { spawn-sh "pkill -x swaync 2>/dev/null; swaync"; }
@@ -48,10 +80,8 @@ binds {
     // === Screenshots ===
     Mod+Print { screenshot; }
     Mod+Shift+Print { screenshot-screen; }
-   
+
 Mod+O { toggle-overview; }
-Mod+WheelScrollUp   { toggle-overview; }
-Mod+WheelScrollDown { toggle-overview; }
 
 //screen recorder
 Mod+F9 { spawn "notify-send" "hello"; }

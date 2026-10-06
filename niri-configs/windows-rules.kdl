@@ -1,21 +1,60 @@
 window-rule {
-    match app-id=r#"^kitty$"# at-startup=true
+    default-column-width { proportion 1.0; }
+    default-window-height { proportion 1.0; }
+}
+
+window-rule {
+    match app-id=r#"^rmpc-bg$"#
     open-on-workspace "1"
-    open-focused false
+    open-focused true
 }
 
 window-rule {
     match app-id=r#"^steam$"# at-startup=true
-    open-on-workspace "4"
-    open-focused false
-}
-window-rule {
-    match app-id=r#"^helium$"# at-startup=true
     open-on-workspace "2"
     open-focused false
+    open-fullscreen false
+}
+
+window-rule {
+    match app-id=r#"^librewolf$"# at-startup=true
+    open-on-workspace "1"
+    open-focused false
+    open-fullscreen false
 }
 
 window-rule {
     geometry-corner-radius 5
     clip-to-geometry true
+}
+
+window-rule {
+    match app-id="^gamescope$"
+    open-fullscreen true
+}
+
+window-rule {
+    match app-id="^steam_app_3094490343$"
+    open-fullscreen true
+}
+
+window-rule {
+    match app-id="^steam_app_default"
+    open-fullscreen true
+}
+
+window-rule {
+    match app-id="^kitty$"
+    default-column-width { proportion 1.0; }
+}
+window-rule {
+    exclude app-id="^steam_app_"
+    exclude app-id="^gamescope$"
+    exclude app-id="^steam$"
+    opacity 0.9
+    background-effect {
+        blur true
+        noise 0
+        saturation 3
+    }
 }
