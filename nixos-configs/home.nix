@@ -6,11 +6,7 @@
 
   gtk = {
     enable = true;
-    theme = {
-      name = "Adwaita-dark";
-      package = pkgs.gnome-themes-extra;
-    };
-    gtk4.theme = config.gtk.theme;
+    theme.name = "Dracula";
     iconTheme = {
       name = "Papirus-Dark";
       package = pkgs.papirus-icon-theme;
@@ -20,30 +16,15 @@
       package = pkgs.adwaita-icon-theme;
       size = 24;
     };
-    gtk3.extraConfig = {
-      gtk-application-prefer-dark-theme = 1;
-    };
-    gtk4.extraConfig = {
-      gtk-application-prefer-dark-theme = 1;
-    };
   };
 
-  qt = {
-    enable = true;
-    platformTheme.name = "gtk3";
-    style.name = "adwaita-dark";
-  };
-
-  home.sessionVariables = {
-    GTK_THEME = "Adwaita-dark";
-  };
+  home.sessionVariables.GTK_THEME = "Dracula";
 
   programs.home-manager.enable = true;
 
   dconf.settings = {
-  "org/gnome/desktop/interface" = {
-    color-scheme = "prefer-dark";
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+    };
   };
-};
-
 }
